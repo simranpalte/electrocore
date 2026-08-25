@@ -1,0 +1,1623 @@
+/* ==========================================
+   ELECTROCORE DASHBOARD
+   ========================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --bg: #050b14;
+    --sidebar: #07111e;
+    --card: #0b1726;
+    --card-light: #0e1c2d;
+
+    --blue: #12b8ff;
+    --blue-dark: #0878ff;
+    --blue-soft: rgba(18, 184, 255, 0.10);
+
+    --text: #f3f7fb;
+    --text-secondary: #96a8bb;
+    --text-muted: #60758a;
+
+    --border: rgba(255, 255, 255, 0.07);
+
+    --warning: #ffb84d;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 70% 10%,
+            rgba(0, 140, 255, 0.06),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+}
+
+
+/* ==========================================
+   DASHBOARD LAYOUT
+   ========================================== */
+
+.dashboard {
+
+    min-height: 100vh;
+
+    display: flex;
+
+}
+
+
+/* ==========================================
+   SIDEBAR
+   ========================================== */
+
+.sidebar {
+
+    width: 255px;
+
+    min-height: 100vh;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 16px 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071321,
+            #050d17
+        );
+
+    border-right: 1px solid var(--border);
+
+    z-index: 10;
+
+}
+
+
+/* LOGO */
+
+.sidebar-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 12px;
+
+    margin-bottom: 38px;
+
+}
+
+
+.sidebar-logo {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--blue-dark)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 140, 255, 0.22);
+
+    font-size: 21px;
+
+}
+
+
+.sidebar-name {
+
+    font-size: 17px;
+
+    font-weight: 750;
+
+    letter-spacing: 1.4px;
+
+}
+
+
+.sidebar-name span {
+
+    color: var(--blue);
+
+}
+
+
+/* NAV */
+
+.nav-section {
+
+    margin-bottom: 25px;
+
+}
+
+
+.nav-title {
+
+    padding: 0 13px;
+
+    margin-bottom: 10px;
+
+    color: #50667c;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.nav-menu {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.nav-menu li {
+
+    position: relative;
+
+}
+
+
+.nav-menu li a {
+
+    height: 45px;
+
+    padding: 0 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 9px;
+
+    color: #8093a7;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    transition: 0.2s ease;
+
+}
+
+
+.nav-menu li a:hover {
+
+    color: #dce8f3;
+
+    background: rgba(255, 255, 255, 0.035);
+
+}
+
+
+.nav-menu li.active a {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(18, 184, 255, 0.15),
+            rgba(18, 184, 255, 0.04)
+        );
+
+}
+
+
+.nav-menu li.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -16px;
+
+    top: 8px;
+
+    bottom: 8px;
+
+    width: 3px;
+
+    border-radius: 0 4px 4px 0;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 0 12px rgba(18, 184, 255, 0.7);
+
+}
+
+
+.nav-icon {
+
+    width: 21px;
+
+    text-align: center;
+
+    color: #657b90;
+
+    font-size: 14px;
+
+}
+
+
+.nav-menu li.active .nav-icon {
+
+    color: var(--blue);
+
+}
+
+
+/* DISABLED ITEMS */
+
+.disabled-item {
+
+    height: 45px;
+
+    padding: 0 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 9px;
+
+    color: #52677b;
+
+    font-size: 13px;
+
+    cursor: default;
+
+}
+
+
+.disabled-item small {
+
+    margin-left: auto;
+
+    font-size: 8px;
+
+    color: #3e5266;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ==========================================
+   SIDEBAR BOTTOM
+   ========================================== */
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+}
+
+
+.system-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+}
+
+
+.status-light {
+
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #26d68a;
+
+    box-shadow:
+        0 0 10px rgba(38, 214, 138, 0.7);
+
+}
+
+
+.system-status div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+
+.system-status strong {
+
+    color: #aab9c8;
+
+    font-size: 10px;
+
+}
+
+
+.system-status small {
+
+    color: #53677b;
+
+    font-size: 8px;
+
+}
+
+
+.logout-button {
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border-radius: 9px;
+
+    color: #8093a6;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    transition: 0.2s ease;
+
+}
+
+
+.logout-button:hover {
+
+    color: #ff8585;
+
+    border-color: rgba(255, 80, 80, 0.18);
+
+    background: rgba(255, 60, 60, 0.05);
+
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.main-content {
+
+    width: calc(100% - 255px);
+
+    margin-left: 255px;
+
+    min-height: 100vh;
+
+    padding: 35px 42px;
+
+}
+
+
+/* ==========================================
+   TOPBAR
+   ========================================== */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+
+}
+
+
+.page-label {
+
+    color: var(--blue);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.page-heading h1 {
+
+    font-size: 28px;
+
+    letter-spacing: -0.7px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.page-heading p {
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+
+.topbar-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+}
+
+
+.date-display {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #73879a;
+
+    font-size: 10px;
+
+}
+
+
+.date-icon {
+
+    color: var(--blue);
+
+    font-size: 15px;
+
+}
+
+
+.user-profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-left: 20px;
+
+    border-left: 1px solid var(--border);
+
+}
+
+
+.user-avatar {
+
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c8dff,
+            #005bd6
+        );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.user-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.user-details strong {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.user-details span {
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+
+}
+
+
+/* ==========================================
+   WELCOME BANNER
+   ========================================== */
+
+.welcome-banner {
+
+    position: relative;
+
+    min-height: 145px;
+
+    padding: 28px 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    margin-bottom: 22px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #0b2941,
+            #0a1b2d 65%,
+            #081421
+        );
+
+    border: 1px solid rgba(18, 184, 255, 0.10);
+
+}
+
+
+.welcome-banner::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    right: -110px;
+    top: -100px;
+
+    border: 1px solid rgba(18, 184, 255, 0.08);
+
+}
+
+
+.welcome-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.welcome-small {
+
+    color: var(--blue);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.welcome-content h2 {
+
+    font-size: 22px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.welcome-content p {
+
+    color: #8fa5b8;
+
+    font-size: 11px;
+
+}
+
+
+.welcome-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    color: var(--blue);
+
+    background: rgba(18, 184, 255, 0.07);
+
+    border: 1px solid rgba(18, 184, 255, 0.12);
+
+    font-size: 38px;
+
+    box-shadow:
+        0 0 40px rgba(18, 184, 255, 0.08);
+
+}
+
+
+/* ==========================================
+   STATISTICS
+   ========================================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.stat-card {
+
+    padding: 20px;
+
+    min-height: 170px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c1929,
+            #091421
+        );
+
+    border: 1px solid var(--border);
+
+    transition: 0.2s ease;
+
+}
+
+
+.stat-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(18, 184, 255, 0.16);
+
+}
+
+
+.stat-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+}
+
+
+.stat-icon {
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: var(--blue);
+
+    background:
+        rgba(18, 184, 255, 0.09);
+
+    font-size: 14px;
+
+}
+
+
+.stat-label {
+
+    color: #52677c;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.stat-label.warning {
+
+    color: var(--warning);
+
+}
+
+
+.stat-title {
+
+    color: #8093a6;
+
+    font-size: 10px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.stat-value {
+
+    color: #f4f8fc;
+
+    font-size: 25px;
+
+    font-weight: 650;
+
+    letter-spacing: -0.7px;
+
+}
+
+
+.stat-bottom {
+
+    color: #4f6378;
+
+    font-size: 9px;
+
+    margin-top: 9px;
+
+}
+
+
+/* ==========================================
+   LOWER GRID
+   ========================================== */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+
+}
+
+
+/* ==========================================
+   PANELS
+   ========================================== */
+
+.panel {
+
+    min-height: 285px;
+
+    padding: 23px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b1726,
+            #09131f
+        );
+
+    border: 1px solid var(--border);
+
+}
+
+
+.panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+
+}
+
+
+.panel-label {
+
+    color: #526a80;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.panel-header h3 {
+
+    margin-top: 5px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+.view-link {
+
+    color: var(--blue);
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+}
+
+
+.view-link:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================
+   TRANSACTIONS
+   ========================================== */
+
+.transaction-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.transaction {
+
+    min-height: 51px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+}
+
+
+.transaction:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.transaction-icon {
+
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+}
+
+
+.sales-icon {
+
+    color: #21d99a;
+
+    background: rgba(33, 217, 154, 0.08);
+
+}
+
+
+.purchase-icon {
+
+    color: var(--warning);
+
+    background: rgba(255, 184, 77, 0.08);
+
+}
+
+
+.transaction-info {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.transaction-info strong {
+
+    color: #cbd7e3;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.transaction-info span {
+
+    color: #4f6479;
+
+    font-size: 8px;
+
+}
+
+
+.transaction-amount {
+
+    color: #29d79b;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.purchase-amount {
+
+    color: var(--warning);
+
+}
+
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.empty-state {
+
+    height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+}
+
+
+.empty-icon {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 4px;
+
+    border-radius: 50%;
+
+    color: #526a7f;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    font-size: 18px;
+
+}
+
+
+.empty-state strong {
+
+    color: #73879a;
+
+    font-size: 10px;
+
+}
+
+
+.empty-state span {
+
+    color: #465b70;
+
+    font-size: 8px;
+
+}
+
+
+/* ==========================================
+   INVENTORY
+   ========================================== */
+
+.inventory-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.inventory-item {
+
+    min-height: 115px;
+
+    padding: 17px 13px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+}
+
+
+.inventory-icon {
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+}
+
+
+.inventory-icon.product {
+
+    color: var(--blue);
+
+    background: rgba(18, 184, 255, 0.08);
+
+}
+
+
+.inventory-icon.low {
+
+    color: var(--warning);
+
+    background: rgba(255, 184, 77, 0.08);
+
+}
+
+
+.inventory-icon.out {
+
+    color: #ff7777;
+
+    background: rgba(255, 80, 80, 0.08);
+
+}
+
+
+.inventory-item div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.inventory-item strong {
+
+    font-size: 17px;
+
+}
+
+
+.inventory-item span {
+
+    color: #566b80;
+
+    font-size: 8px;
+
+}
+
+
+/* ==========================================
+   SUMMARY
+   ========================================== */
+
+.summary-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.summary-row {
+
+    min-height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+}
+
+
+.summary-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.summary-row span {
+
+    color: #687c90;
+
+    font-size: 10px;
+
+}
+
+
+.summary-row strong {
+
+    color: #d8e2eb;
+
+    font-size: 11px;
+
+}
+
+
+.summary-row .warning-text {
+
+    color: var(--warning);
+
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.dashboard-footer {
+
+    padding: 25px 0 5px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #3f5368;
+
+    font-size: 8px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1200px) {
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 950px) {
+
+    .sidebar {
+
+        width: 215px;
+
+    }
+
+    .main-content {
+
+        width: calc(100% - 215px);
+
+        margin-left: 215px;
+
+        padding: 28px;
+
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        min-height: auto;
+
+    }
+
+    .dashboard {
+
+        flex-direction: column;
+
+    }
+
+    .main-content {
+
+        width: 100%;
+
+        margin-left: 0;
+
+    }
+
+    .nav-menu {
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+    }
+
+    .sidebar-bottom {
+
+        margin-top: 20px;
+
+    }
+
+    .topbar {
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+    }
+
+    .topbar-right {
+
+        flex-direction: column;
+
+        align-items: flex-end;
+
+        gap: 10px;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .main-content {
+
+        padding: 22px 16px;
+
+    }
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .welcome-banner {
+
+        padding: 24px;
+
+    }
+
+    .welcome-icon {
+
+        display: none;
+
+    }
+
+    .topbar {
+
+        flex-direction: column;
+
+    }
+
+    .topbar-right {
+
+        align-items: flex-start;
+
+    }
+
+    .user-profile {
+
+        padding-left: 0;
+
+        border-left: none;
+
+    }
+
+    .inventory-summary {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .dashboard-footer {
+
+        flex-direction: column;
+
+        gap: 6px;
+
+    }
+
+}
+
+
+
+/* ==========================================
+   ELECTROCORE - READABLE TEXT
+   ========================================== */
+
+.nav-menu li a {
+    font-size: 13px;
+}
+
+.nav-title {
+    font-size: 10px;
+}
+
+.page-heading h1 {
+    font-size: 29px;
+}
+
+.page-heading p {
+    font-size: 13px;
+}
+
+.stat-title {
+    font-size: 11px;
+}
+
+.stat-value {
+    font-size: 26px;
+}
+
+.panel-header h3 {
+    font-size: 16px;
+}
+
+.transaction-info strong {
+    font-size: 11px;
+}
+
+.transaction-info span {
+    font-size: 9px;
+}
+
+.transaction-amount {
+    font-size: 11px;
+}
+
+.summary-row span {
+    font-size: 11px;
+}
+
+.summary-row strong {
+    font-size: 12px;
+}
+
+.view-link {
+    font-size: 10px;
+}
+
+.user-details strong {
+    font-size: 12px;
+}
+
+.user-details span {
+    font-size: 10px;
+}
+/* ==========================================
+   ELECTROCORE - FIXED SIDEBAR LAYOUT
+   ========================================== */
+
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 255px;
+    z-index: 1000;
+}
+
+.main-content {
+    width: calc(100% - 255px);
+    margin-left: 255px;
+    min-height: 100vh;
+    padding: 35px 42px;
+}
