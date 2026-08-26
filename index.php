@@ -744,7 +744,7 @@ $error = $_GET["error"] ?? "";
             <div class="brand">
 
                 <div class="logo">
-                    ⚡
+                    &#9889;
                 </div>
 
                 <div class="brand-name">
@@ -786,7 +786,7 @@ $error = $_GET["error"] ?? "";
                     <div class="feature">
 
                         <div class="feature-icon">
-                            ⚡
+                            &#10003;
                         </div>
 
                         <span>Billing</span>
@@ -797,7 +797,7 @@ $error = $_GET["error"] ?? "";
                     <div class="feature">
 
                         <div class="feature-icon">
-                            ◈
+                            &#10003;
                         </div>
 
                         <span>Inventory</span>
@@ -808,7 +808,7 @@ $error = $_GET["error"] ?? "";
                     <div class="feature">
 
                         <div class="feature-icon">
-                            ✓
+                            &#10003;
                         </div>
 
                         <span>Customers</span>
@@ -886,7 +886,7 @@ $error = $_GET["error"] ?? "";
                     <div class="input-wrapper">
 
                         <span class="input-icon">
-                            ◉
+                            &#9670;
                         </span>
 
                         <input
@@ -915,7 +915,7 @@ $error = $_GET["error"] ?? "";
                     <div class="input-wrapper">
 
                         <span class="input-icon">
-                            ◆
+                            &#9670;
                         </span>
 
                         <input
@@ -933,7 +933,7 @@ $error = $_GET["error"] ?? "";
                             id="passwordToggle"
                             aria-label="Show password"
                         >
-                            👁
+                            Ã°Å¸â€˜Â
                         </button>
 
                     </div>
@@ -961,7 +961,7 @@ $error = $_GET["error"] ?? "";
             <div class="security">
 
                 <span class="security-icon">
-                    🔒
+                    &#128274;
                 </span>
 
                 Secure access to ElectroCore
@@ -973,11 +973,11 @@ $error = $_GET["error"] ?? "";
 
             <div class="footer">
 
-                © <?php echo date("Y"); ?>
+                Ã‚Â© <?php echo date("Y"); ?>
 
                 <span>ElectroCore</span>
 
-                · Billing & Inventory Management System
+                Ã‚Â· Billing & Inventory Management System
 
             </div>
 
@@ -1007,13 +1007,13 @@ $error = $_GET["error"] ?? "";
 
                 password.type = "text";
 
-                passwordToggle.textContent = "🙈";
+                passwordToggle.textContent = "Ã°Å¸â„¢Ë†";
 
             } else {
 
                 password.type = "password";
 
-                passwordToggle.textContent = "👁";
+                passwordToggle.textContent = "Ã°Å¸â€˜Â";
 
             }
 
