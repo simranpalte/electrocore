@@ -933,7 +933,7 @@ $error = $_GET["error"] ?? "";
                             id="passwordToggle"
                             aria-label="Show password"
                         >
-                            Ã°Å¸â€˜Â
+                            &#128065;
                         </button>
 
                     </div>
@@ -972,13 +972,9 @@ $error = $_GET["error"] ?? "";
             <!-- FOOTER -->
 
             <div class="footer">
-
-                Ã‚Â© <?php echo date("Y"); ?>
-
+                &#169; <?php echo date("Y"); ?>
                 <span>ElectroCore</span>
-
-                Ã‚Â· Billing & Inventory Management System
-
+                &#183; Billing & Inventory Management System
             </div>
 
 
@@ -1007,13 +1003,13 @@ $error = $_GET["error"] ?? "";
 
                 password.type = "text";
 
-                passwordToggle.textContent = "Ã°Å¸â„¢Ë†";
+                passwordToggle.textContent = "\uD83D\uDC41";
 
             } else {
 
                 password.type = "password";
 
-                passwordToggle.textContent = "Ã°Å¸â€˜Â";
+                passwordToggle.textContent = "\uD83D\uDC41";
 
             }
 
