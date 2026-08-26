@@ -479,11 +479,11 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
     <div class="sidebar-brand">
 
         <div class="sidebar-logo">
-            &#9889;
+            ⚡
         </div>
 
         <div class="sidebar-name">
-            ELECTRO<span>â†ª</span>
+            ELECTRO<span>CORE</span>
         </div>
 
     </div>
@@ -516,11 +516,11 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 <a href="<?= BASE_URL ?>/dashboard.php">
 
                     <span class="nav-icon">
-                        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€¹Ã¢â‚¬Â 
+                        ◈
                     </span>
 
                     <span>
-                        â†ª
+                        Dashboard
                     </span>
 
                 </a>
@@ -537,11 +537,11 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 <a href="<?= BASE_URL ?>/modules/products/index.php">
 
                     <span class="nav-icon">
-                        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â£
+                        ▣
                     </span>
 
                     <span>
-                        â†ª
+                        Products
                     </span>
 
                 </a>
@@ -558,11 +558,11 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 <a href="<?= BASE_URL ?>/modules/customers/index.php">
 
                     <span class="nav-icon">
-                        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°
+                        ◉
                     </span>
 
                     <span>
-                        â†ª
+                        Customers
                     </span>
 
                 </a>
@@ -579,11 +579,11 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 <a href="<?= BASE_URL ?>/modules/billing/index.php">
 
                     <span class="nav-icon">
-                        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â¤
+                        ▤
                     </span>
 
                     <span>
-                        â†ª
+                        Billing
                     </span>
 
                 </a>
@@ -619,11 +619,11 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 <a href="<?= BASE_URL ?>/modules/purchases/index.php">
 
                     <span class="nav-icon">
-                        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â«
+                        ◫
                     </span>
 
                     <span>
-                        â†ª
+                        Purchases
                     </span>
 
                 </a>
@@ -640,11 +640,11 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 <a href="<?= BASE_URL ?>/modules/payments/index.php">
 
                     <span class="nav-icon">
-                        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¹
+                        ₹
                     </span>
 
                     <span>
-                        â†ª
+                        Payments
                     </span>
 
                 </a>
@@ -661,11 +661,11 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 <a href="<?= BASE_URL ?>/modules/inventory/index.php">
 
                     <span class="nav-icon">
-                        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂÃƒâ€šÃ‚Â©
+                        ◩
                     </span>
 
                     <span>
-                        â†ª
+                        Inventory
                     </span>
 
                 </a>
@@ -714,7 +714,7 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
         >
 
             <span>
-                â†ª
+                ⇥
             </span>
 
             Logout
