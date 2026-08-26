@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/config/app.php';
 
 session_start();
 
@@ -485,7 +486,7 @@ $display_role = ucwords(
                     </div>
 
                     <a
-                        href="/electrocore/modules/billing/index.php"
+                        href="<?= BASE_URL ?>/modules/billing/index.php"
                         class="view-link"
                     >
                         View Billing →
@@ -576,7 +577,7 @@ $display_role = ucwords(
                     </div>
 
                     <a
-                        href="/electrocore/modules/purchases/"
+                        href="<?= BASE_URL ?>/modules/purchases/"
                         class="view-link"
                     >
                         View Purchases →
@@ -667,7 +668,7 @@ $display_role = ucwords(
                     </div>
 
                     <a
-                        href="/electrocore/modules/inventory/"
+                        href="<?= BASE_URL ?>/modules/inventory/"
                         class="view-link"
                     >
                         View Inventory →

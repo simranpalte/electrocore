@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config/app.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -478,7 +479,7 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
     <div class="sidebar-brand">
 
         <div class="sidebar-logo">
-            ⚡
+            âš¡
         </div>
 
         <div class="sidebar-name">
@@ -512,10 +513,10 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 )
             ) ? 'active' : '' ?>">
 
-                <a href="/electrocore/dashboard.php">
+                <a href="<?= BASE_URL ?>/dashboard.php">
 
                     <span class="nav-icon">
-                        ◈
+                        â—ˆ
                     </span>
 
                     <span>
@@ -533,10 +534,10 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 $currentDirectory === 'products'
             ) ? 'active' : '' ?>">
 
-                <a href="/electrocore/modules/products/index.php">
+                <a href="<?= BASE_URL ?>/modules/products/index.php">
 
                     <span class="nav-icon">
-                        ▣
+                        â–£
                     </span>
 
                     <span>
@@ -554,10 +555,10 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 $currentDirectory === 'customers'
             ) ? 'active' : '' ?>">
 
-                <a href="/electrocore/modules/customers/index.php">
+                <a href="<?= BASE_URL ?>/modules/customers/index.php">
 
                     <span class="nav-icon">
-                        ◉
+                        â—‰
                     </span>
 
                     <span>
@@ -575,10 +576,10 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 $currentDirectory === 'billing'
             ) ? 'active' : '' ?>">
 
-                <a href="/electrocore/modules/billing/index.php">
+                <a href="<?= BASE_URL ?>/modules/billing/index.php">
 
                     <span class="nav-icon">
-                        ▤
+                        â–¤
                     </span>
 
                     <span>
@@ -615,10 +616,10 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 $currentDirectory === 'purchases'
             ) ? 'active' : '' ?>">
 
-                <a href="/electrocore/modules/purchases/index.php">
+                <a href="<?= BASE_URL ?>/modules/purchases/index.php">
 
                     <span class="nav-icon">
-                        ◫
+                        â—«
                     </span>
 
                     <span>
@@ -636,10 +637,10 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 $currentDirectory === 'payments'
             ) ? 'active' : '' ?>">
 
-                <a href="/electrocore/modules/payments/index.php">
+                <a href="<?= BASE_URL ?>/modules/payments/index.php">
 
                     <span class="nav-icon">
-                        ₹
+                        â‚¹
                     </span>
 
                     <span>
@@ -657,10 +658,10 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
                 $currentDirectory === 'inventory'
             ) ? 'active' : '' ?>">
 
-                <a href="/electrocore/modules/inventory/index.php">
+                <a href="<?= BASE_URL ?>/modules/inventory/index.php">
 
                     <span class="nav-icon">
-                        ◩
+                        â—©
                     </span>
 
                     <span>
@@ -708,12 +709,12 @@ $currentDirectory = basename(dirname($_SERVER['PHP_SELF']));
         <!-- LOGOUT -->
 
         <a
-            href="/electrocore/logout.php"
+            href="<?= BASE_URL ?>/logout.php"
             class="logout-button"
         >
 
             <span>
-                ⇥
+                â‡¥
             </span>
 
             Logout

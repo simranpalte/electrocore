@@ -1,9 +1,10 @@
 <?php
+require_once __DIR__ . '/../../config/app.php';
 
 session_start();
 
 if (!isset($_SESSION["user_id"])) {
-    header("Location: /electrocore/index.php");
+    header("Location: " . BASE_URL . "/index.php");
     exit;
 }
 
@@ -72,7 +73,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <link
         rel="stylesheet"
-        href="/electrocore/assets/css/dashboard.css"
+        href="<?= BASE_URL ?>/assets/css/dashboard.css"
     >
 
 
@@ -834,7 +835,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="payments-title">
 
                         <div class="payments-icon">
-                            ₹
+                            â‚¹
                         </div>
 
                         <div>
@@ -997,7 +998,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 }
                                 else {
 
-                                    $party = "—";
+                                    $party = "â€”";
 
                                 }
 
@@ -1028,7 +1029,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 }
                                 else {
 
-                                    $transaction = "—";
+                                    $transaction = "â€”";
 
                                 }
 
@@ -1060,7 +1061,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         "reference_number"
                                     ]
                                     :
-                                    "—";
+                                    "â€”";
 
                                 ?>
 
@@ -1154,7 +1155,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                                         <span class="payment-amount">
 
-                                            ₹<?= number_format(
+                                            â‚¹<?= number_format(
                                                 (float)
                                                 $payment["amount"],
                                                 2
@@ -1199,7 +1200,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 )
                                             )
                                             :
-                                            "—"
+                                            "â€”"
                                             ?>
 
                                         </span>
@@ -1260,7 +1261,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 >
 
                                     <div class="payments-empty-icon">
-                                        ₹
+                                        â‚¹
                                     </div>
 
                                     <strong>
@@ -1296,7 +1297,7 @@ $payments = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <footer class="payments-footer">
 
                 <span>
-                    © <?= date("Y") ?> ElectroCore
+                    Â© <?= date("Y") ?> ElectroCore
                 </span>
 
                 <span>
